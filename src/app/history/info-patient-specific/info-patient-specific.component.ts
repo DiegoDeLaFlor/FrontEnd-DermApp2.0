@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Patient} from "../../diagnosticIllness/model/patient";
-import {PatientsService} from "../../diagnosticIllness/services/patients.service";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../diagnosticIllness/services/user.service";
 import {toInteger} from "lodash";
@@ -15,6 +14,7 @@ export class InfoPatientSpecificComponent implements OnInit {
   constructor(private route: ActivatedRoute,private patientService: UserService) { this.patientData = {} as Patient; }
   patient:any = {}
   ngOnInit(): void {
+    this.showInfoPatient()
   }
   tiles: any[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
@@ -29,4 +29,5 @@ export class InfoPatientSpecificComponent implements OnInit {
       this.patient = response;
     })
   }
+
 }

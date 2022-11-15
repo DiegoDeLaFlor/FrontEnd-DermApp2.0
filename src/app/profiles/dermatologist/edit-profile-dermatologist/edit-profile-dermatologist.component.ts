@@ -15,6 +15,7 @@ export class EditProfileDermatologistComponent implements OnInit {
     age: 18,
     address: "asg",
     email: "sagsa",
+    specialty: "sdaa",
     password: "sgsa",
     dermatologistId: 0,
     urlImage: "sagsa"

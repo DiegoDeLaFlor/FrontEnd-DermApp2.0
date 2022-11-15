@@ -9,47 +9,54 @@
 <div class="patient" >
 
   <div class="patient-section1">
-    <!--    <h1>patient {{}}</h1>-->
     <mat-card style="margin-top: 10px">
       <form >
         <mat-grid-list cols="4" rowHeight="80px">
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-NAME
+            {{this.patient.name}} {{this.patient.lastName}}
           </mat-grid-tile>
-          <mat-grid-tile [colspan]="3" [rowspan]="8" [style.background]="'lightblue'">
-            IMG-ENFERMEDAD-WITH-CARD
-            <h1>Day 1</h1>
-            <img src="" alt="">
-            <h2>Doctor’s notes -DAY 1</h2>
-            <p>- Large symmetrical mole in upper right shoulder, appears to be non-cancerous
-              - Awaiting further tests</p>
+            <mat-grid-tile [colspan]="3" [rowspan]="8" [style.background]="'lightblue'">
+              <div class="container">
+                IMG-ENFERMEDAD-WITH-CARD
+                <h1>Day 1</h1>
+                <img src="" alt="">
+                <h2>Doctor’s notes-Diagnostic</h2>
+                <mat-form-field appearance="fill">
+                  <mat-label>Description</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
+            {{this.patient.age}}
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-AGE
+            {{this.patient.gender}}
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-GENDER
+            {{this.patient.address}}
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-RESIDENCE
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput name="status" value="{{this.patient?.status}}" placeholder="Status" [(ngModel)]="patient!.status">
+            </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-STATUS
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput name="diagnostic" value="{{this.patient?.diagnostic}}" placeholder="Diagnostic" [(ngModel)]="patient!.diagnostic">
+            </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-DIAGNOSTIC
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            PATIENT-TREATMENT
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input matInput name="treatment" value="{{this.patient?.treatment}}" placeholder="Treatment" [(ngModel)]="patient!.treatment">
+            </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile  [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            IMG-USUARIO-FACE
-            <!--              <img src="{{element.urlToImage}}" style="width: 50px">-->
+            <img src="{{this.patient?.urlImage}}"  alt="User profile photo" width="80px" />
           </mat-grid-tile>
         </mat-grid-list>
         <br>
         <br>
-
       </form>
 
     </mat-card>
