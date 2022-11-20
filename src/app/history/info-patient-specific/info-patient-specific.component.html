@@ -3,6 +3,7 @@
     <span>info-patient</span>
     <div class="example-spacer"></div>
     <button mat-raised-button color="primary" routerLink="/patients">Back</button>
+    <button mat-raised-button color="primary" (click)="updatePatient(patient.id)">Save</button>
   </mat-toolbar>
 </div>
 
@@ -13,7 +14,7 @@
       <form >
         <mat-grid-list cols="4" rowHeight="80px">
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            {{this.patient.name}} {{this.patient.lastName}}
+            Name: {{this.patient.name}} {{this.patient.lastName}}
           </mat-grid-tile>
             <mat-grid-tile [colspan]="3" [rowspan]="8" [style.background]="'lightblue'">
               <div class="container">
@@ -22,32 +23,44 @@
                 <img src="" alt="">
                 <h2>Doctor’s notes-Diagnostic</h2>
                 <mat-form-field appearance="fill">
-                  <mat-label>Description</mat-label>
-                  <textarea matInput></textarea>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput name="description" value="{{this.patient.description}}" [(ngModel)]="patient!.description"></textarea>
                 </mat-form-field>
               </div>
             </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            {{this.patient.age}}
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            {{this.patient.gender}}
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
-            {{this.patient.address}}
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Age</mat-label>
+              <input matInput name="age" value="{{this.patient.age}}" placeholder="Age" [(ngModel)]="patient!.age">
+            </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
             <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Gender</mat-label>
+              <input matInput name="gender" value="{{this.patient.gender}}" placeholder="Gender" [(ngModel)]="patient!.gender">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Address</mat-label>
+              <input matInput name="address" value="{{this.patient.address}}" placeholder="Address" [(ngModel)]="patient!.address">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Status</mat-label>
               <input matInput name="status" value="{{this.patient?.status}}" placeholder="Status" [(ngModel)]="patient!.status">
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
             <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Diagnostic</mat-label>
               <input matInput name="diagnostic" value="{{this.patient?.diagnostic}}" placeholder="Diagnostic" [(ngModel)]="patient!.diagnostic">
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">
             <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Treatment</mat-label>
               <input matInput name="treatment" value="{{this.patient?.treatment}}" placeholder="Treatment" [(ngModel)]="patient!.treatment">
             </mat-form-field>
           </mat-grid-tile>
@@ -60,10 +73,6 @@
       </form>
 
     </mat-card>
-  </div>
-
-  <div class="patient-section2">
-
   </div>
 
 </div>

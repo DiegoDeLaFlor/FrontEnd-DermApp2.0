@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Patient} from "../../diagnosticIllness/model/patient";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../diagnosticIllness/services/user.service";
 import {toInteger} from "lodash";
 
@@ -10,9 +10,22 @@ import {toInteger} from "lodash";
   styleUrls: ['./info-patient-specific.component.css']
 })
 export class InfoPatientSpecificComponent implements OnInit {
+  patient: any = {
+    name: "",
+    lastName: "",
+    age: 18,
+    address: "",
+    email: "",
+    dermatologistId: 0,
+    diagnostic: "",
+    treatment: "",
+    status: "",
+    description: "",
+    urlImage: "",
+  }
+  next = true;
   patientData: Patient;
-  constructor(private route: ActivatedRoute,private patientService: UserService) { this.patientData = {} as Patient; }
-  patient:any = {}
+  constructor(private router: Router, private route: ActivatedRoute, private patientService: UserService) { this.patientData = {} as Patient; }
   ngOnInit(): void {
     this.showInfoPatient()
   }
@@ -29,5 +42,12 @@ export class InfoPatientSpecificComponent implements OnInit {
       this.patient = response;
     })
   }
-
+  updatePatient(id : number){
+    this.patientService.UpdatePatient(id, this.patient).subscribe((response)=>{
+      console.log(response);
+      this.router.navigate(['patients']);
+      localStorage.removeItem("patient");
+      localStorage.setItem("patient", JSON.stringify(this.patient));
+    })
+  }
 }

@@ -12,7 +12,14 @@
   flex-direction: column;
   text-align: center;
 }
+
 .container h1{
   font-size: 35px;
   padding: 15px 0;
+}
+.example-full-width{
+  text-align: center;
+}
+.text-body{
+  height: 250px;
 }

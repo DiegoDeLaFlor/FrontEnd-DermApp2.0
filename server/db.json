@@ -9,7 +9,8 @@
       "email": "alonso1596@gmail.com",
       "password": "12345",
       "dermatologistId": 5,
-      "urlImage": "https://img2.freepng.es/20181130/huu/kisspng-computer-icons-scalable-vector-graphics-user-profi-personal-svg-png-icon-free-download-217545-on-5c01bfc8dca423.4162202015436185049038.jpg",
+      "urlImage": "https://img2.freepng.es/20181130/huu/kisspng-computer-icons-scalable-vector-graphics-user-profi-personal-svg-png-icon-free-download-217545-on-5c01bfc8dca423.4162202015436185049038.jpg"
+      "description" : "Hola",
       "id": 17
     },
     {
@@ -22,6 +23,7 @@
       "password": "12345",
       "dermatologistId": 5,
       "urlImage": "https://cine1documental.files.wordpress.com/2015/01/foto-carnet.jpg",
+      "description" : "",
       "id": 18
     }
   ],

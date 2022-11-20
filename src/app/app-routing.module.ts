@@ -46,13 +46,13 @@ const routes: Routes = [
   { path: '', component: ViewComponent, children:[
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'sign-in', component:RegisterFormComponent},
-      { path: 'sign-in-dermatologist', component: RegisterDermatologistComponent},
-      { path: 'sign-in-patient', component: RegisterPatientComponent},
-      { path: 'login', component:LoginFormComponent},
+      //{ path: 'sign-in', component:RegisterFormComponent},
+      //{ path: 'sign-in-dermatologist', component: RegisterDermatologistComponent},
+      //{ path: 'sign-in-patient', component: RegisterPatientComponent},
+      //{ path: 'login', component:LoginFormComponent},
       { path: 'home', component: HomeComponent },
-      { path: 'login-dermatologist', component: LoginFormDermatologistComponent },
-      { path: 'login-patient', component: LoginFormPatientComponent },
+      //{ path: 'login-dermatologist', component: LoginFormDermatologistComponent },
+      //{ path: 'login-patient', component: LoginFormPatientComponent },
     ]},
 
   { path: '', component: ViewPatientComponent, children:[
